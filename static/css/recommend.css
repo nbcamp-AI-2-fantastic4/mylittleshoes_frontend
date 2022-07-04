@@ -1,0 +1,80 @@
+/* 타입별 메뉴 */
+.typemenu {
+  list-style-type: none;
+  padding: 0px;
+  margin-top: -50px;
+  width: 280px;
+  background: greenyellow;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+}
+
+
+.typemenu>li a {
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  color: #000;
+  font-weight: bold;
+}
+
+.typemenu>li a:hover {
+  background: #333;
+  color: #fff;
+}
+
+
+
+/* .typemenu>li a:hover {
+
+} */
+
+/* .typemenu>li a.home {
+  background: #333;
+  color: #fff;
+} */
+
+/* .typemenu>ul>li:hover>ul {
+  display: block;
+} */
+
+.productinfo {
+  margin-left: 120px;
+}
+
+
+
+/* 브랜드별 메뉴 */
+.brandmenu {
+  width: 950px;
+  overflow: auto;
+  position: relative;
+  padding: 0;
+  display: flex;
+  margin-top: 100px;
+  margin-left: 280px;
+  align-content: center;
+}
+
+.brandmenu>li>a {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.brandmenu>li {
+  background-color: greenyellow;
+  list-style-type: none;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid black;
+  width: calc(100% / 3);
+}
+
+li:nth-child(1),
+li:nth-child(2) {
+  border-right: none;
+}
