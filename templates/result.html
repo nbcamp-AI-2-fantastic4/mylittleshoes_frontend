@@ -20,9 +20,7 @@
       type="text/javascript"
       src="http://code.jquery.com/jquery-latest.js"
     ></script>
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,7 +32,7 @@
 
     <!-- css, js -->
     <link rel="stylesheet" href="../static/css/common.css" />
-    <link rel="stylesheet" href="../static/css/result.css" />
+    <link rel="stylesheet" href="../static/css/result1.css" />
     <script defer src="../static/js/common.js"></script>
     <script defer src="../static/js/result.js"></script>
 
@@ -57,15 +55,7 @@
         <span style="font-weight: bold" id="user_name">김동우</span>
         <br />
         <span id="user_email">kimphysicsman</span> <br />
-        <button id="logout_btn" onclick="location.href='/logout'">
-          로그아웃
-        </button>
-        <button id="logout_btn" onclick="location.href='/update'">
-          회원 수정
-        </button>
-        <button id="logout_btn" onclick="location.href='/delete'">
-          회원 탈퇴
-        </button>
+        <button id="logout_btn" onclick="logout()">로그아웃</button>
       </div>
     </div>
   </div>
@@ -76,9 +66,9 @@
         <div class="result_text_box">
           <h>내가 만든 신발!</h>
         </div>
+        <div class="result_img_text">결과 이미지</div>
         <div class="result_img_box">
-          <p>결과 이미지</p>
-          <img id="result-file">
+          <img id="result_file" src="" />
         </div>
         <div class="button_box">
           <div class="restart_button">
@@ -91,17 +81,17 @@
         <div class="show_and_hide_button">
           <button class="show_hide_button">사용된 이미지</button>
         </div>
-        <div class="img_box" style="display:none">
+        <div class="img_box" style="display: none">
           <div class="a_img">
             <p>첫번째 이미지</p>
-            <img src="" id="first-img">
+            <img src="" id="first-img" />
           </div>
           <div class="plus_icon">
-            <img src="../static/image/plus_icon.png">
+            <img src="../static/image/plus_icon.png" />
           </div>
           <div class="b_img">
             <p>두번째 이미지</p>
-            <img src="" id="second-img">
+            <img src="" id="second-img" />
           </div>
         </div>
       </div>

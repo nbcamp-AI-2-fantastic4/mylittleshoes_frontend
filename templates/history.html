@@ -21,7 +21,10 @@
       src="http://code.jquery.com/jquery-latest.js"
     ></script>
 
-    <script src="https://kit.fontawesome.com/267d1d7e88.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/267d1d7e88.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,15 +59,7 @@
         <span style="font-weight: bold" id="user_name">김동우</span>
         <br />
         <span id="user_email">kimphysicsman</span> <br />
-        <button id="logout_btn" onclick="location.href='/logout'">
-          로그아웃
-        </button>
-        <button id="logout_btn" onclick="location.href='/update'">
-          회원 수정
-        </button>
-        <button id="logout_btn" onclick="location.href='/delete'">
-          회원 탈퇴
-        </button>
+        <button id="logout_btn" onclick="logout()">로그아웃</button>
       </div>
     </div>
   </div>
@@ -80,21 +75,29 @@
               <u>Bootstrapious</u></a>
           </p>-->
         </header>
-      
+
         <!-- cards-->
-      
+
         <div class="cards row pb-5 mb-2">
           <div class="card-box col-lg-3 col-md-6 mb-4 mb-lg-0">
             <!-- Card-->
             <div class="card shadow-sm border-0 rounded">
               <div class="card-body p-0">
                 <div class="card-img" onclick="openModal()">
-                  <img src="https://bootstrapious.com/i/snippets/sn-cards/profile-1_dewapk.jpg" alt="" class="w-100 card-img-top">
+                  <img
+                    src="https://bootstrapious.com/i/snippets/sn-cards/profile-1_dewapk.jpg"
+                    alt=""
+                    class="w-100 card-img-top"
+                  />
                 </div>
                 <div class="p-4">
                   <p class="card-name mb-0">
                     Username
-                    <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="likes fa-solid fa-heart"></i></a></li>
+                    <li class="list-inline-item m-0">
+                      <a href="#" class="social-link"
+                        ><i class="likes fa-solid fa-heart"></i
+                      ></a>
+                    </li>
                   </p>
                   <p class="card-date small text-muted">Created_at</p>
                 </div>
@@ -104,14 +107,22 @@
           <div class="card-box col-lg-3 col-md-6 mb-4 mb-lg-0">
             <!-- Card-->
             <div class="card shadow-sm border-0 rounded">
-              <div class="card-body p-0"><img src="https://bootstrapious.com/i/snippets/sn-cards/profile-1_dewapk.jpg" alt="" class="w-100 card-img-top">
+              <div class="card-body p-0">
+                <img
+                  src="https://bootstrapious.com/i/snippets/sn-cards/profile-1_dewapk.jpg"
+                  alt=""
+                  class="w-100 card-img-top"
+                />
                 <div class="p-4">
                   <p class="card-name mb-0">
                     Username
-                    <li class="list-inline-item m-0"><a href="#" class="social-link"><i class="likes fa-solid fa-heart"></i></a></li>
+                    <li class="list-inline-item m-0">
+                      <a href="#" class="social-link"
+                        ><i class="likes fa-solid fa-heart"></i
+                      ></a>
+                    </li>
                   </p>
                   <p class="card-date small text-muted">Created_at</p>
-                  
                 </div>
               </div>
             </div>
@@ -121,46 +132,51 @@
       </div>
     </div>
 
-  <div id="modal_open" class="modal_overlay">
-    <div class="modal_window">
+    <div id="modal_open" class="modal_overlay">
+      <div class="modal_window">
         <div class="modal_title">
-            <div class="modal_title_side"></div>
-            <div style="font-size: 20px">Detailed</div>
-            <div class="modal_title_side">
-                <button id="close_modal" class="fa-solid fa-xmark" name="close_modal" style="border: 0;"></button>
-            </div>
+          <div class="modal_title_side"></div>
+          <div style="font-size: 20px">Detailed</div>
+          <div class="modal_title_side">
+            <button
+              id="close_modal"
+              class="fa-solid fa-xmark"
+              name="close_modal"
+              style="border: 0"
+            ></button>
+          </div>
         </div>
-        <hr/>
-        <br>
-        <div class="modal_body" >
+        <hr />
+        <br />
+        <div class="modal_body">
           <div class="img_used">
             <div class="img_first">
-              <img id="beer_img" src="" style="width:250px; height:200px;"/>
+              <img id="beer_img" src="" style="width: 250px; height: 200px" />
             </div>
             <div class="img_second">
-              <img id="beer_img" src="" style="width:250px; height:200px;"/>
+              <img id="beer_img" src="" style="width: 250px; height: 200px" />
             </div>
-          </div>  
+          </div>
           <div class="img_result">
-            <img id="beer_img" src="" style="width:300px; height:200px;"/>
+            <img id="beer_img" src="" style="width: 300px; height: 200px" />
           </div>
         </div>
         <div class="modal_comment">
-            <h2 id="beer_name" style="font-weight: bold">Comments</h2>
-            <div class="modal_text" style="font-size: large">
-              <div class="comments_box">
-                dkdk
-                dddd
-                dd
-                dd
-              </div>
-              <div class="comment_write">
-                <input type="text" class="form-control" id="comment_text" name="comment_text">
-                <button type="button" class="comment_btn">작성</button>
-              </div>  
+          <h2 id="beer_name" style="font-weight: bold">Comments</h2>
+          <div class="modal_text" style="font-size: large">
+            <div class="comments_box">dkdk dddd dd dd</div>
+            <div class="comment_write">
+              <input
+                type="text"
+                class="form-control"
+                id="comment_text"
+                name="comment_text"
+              />
+              <button type="button" class="comment_btn">작성</button>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-  </div>
   </body>
 </html>

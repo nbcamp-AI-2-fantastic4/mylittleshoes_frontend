@@ -20,9 +20,7 @@
       type="text/javascript"
       src="http://code.jquery.com/jquery-latest.js"
     ></script>
-    <script
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,8 +33,11 @@
     <!-- css, js -->
     <link rel="stylesheet" href="../static/css/common.css" />
     <link rel="stylesheet" href="../static/css/upload.css" />
+    <link rel="stylesheet" href="../static/css/result.css" />
     <script defer src="../static/js/common.js"></script>
     <script defer src="../static/js/img_script.js"></script>
+    <script defer src="../static/js/upload.js"></script>
+    <script defer src="../static/js/result.js"></script>
 
     <!-- 참조할 css, js -->
 
@@ -57,22 +58,14 @@
         <span style="font-weight: bold" id="user_name">김동우</span>
         <br />
         <span id="user_email">kimphysicsman</span> <br />
-        <button id="logout_btn" onclick="location.href='/logout'">
-          로그아웃
-        </button>
-        <button id="logout_btn" onclick="location.href='/update'">
-          회원 수정
-        </button>
-        <button id="logout_btn" onclick="location.href='/delete'">
-          회원 탈퇴
-        </button>
+        <button id="logout_btn" onclick="logout()">로그아웃</button>
       </div>
     </div>
   </div>
 
   <body class="team_color">
     <div class="main_body">
-      <div class="upload_box">
+      <div class="upload_box" id="upload_box">
         <div class="upload_text_box">
           <h>나의 신발은?</h>
         </div>
@@ -80,17 +73,17 @@
           <div class="a_img">
             <p id="first-p">첫번째 이미지</p>
             <button id="first-button">Select Image</button>
-            <img src="" id="first-img" style="display:none">
-            <input type="file" id="a-upload-file" hidden>
+            <img src="" id="first-img" style="display: none" />
+            <input type="file" id="a-upload-file" hidden />
           </div>
           <div class="plus_icon">
-            <img src="../static/image/plus_icon.png">
+            <img src="../static/image/plus_icon.png" />
           </div>
           <div class="b_img">
             <p id="second-p">두번째 이미지</p>
             <button id="second-button">Select Image</button>
-            <img src="" id="second-img" style="display:none">
-            <input type="file" id="b-upload-file" hidden>
+            <img src="" id="second-img" style="display: none" />
+            <input type="file" id="b-upload-file" hidden />
           </div>
         </div>
         <div class="button_box">
@@ -98,8 +91,26 @@
             <button onclick="removeImgButton()">새로고침</button>
           </div>
           <div class="result_view_button">
-            <button>결과보기</button>
+            <button onclick="imageUpload()">결과보기</button>
           </div>
+        </div>
+      </div>
+
+      <div class="result_box" id="result_box">
+        <div class="result_text_box">
+          <h>내가 만든 신발!</h>
+        </div>
+        <div class="result_img_box">
+          <img id="result-file" src="" />
+        </div>
+        <div class="button_box">
+          <div class="restart_button">
+            <button onclick="replay()">다시하기</button>
+          </div>
+          <div class="save_button">
+            <button onclick="image_save()">저장하기</button>
+          </div>
+        </div>
         </div>
       </div>
     </div>

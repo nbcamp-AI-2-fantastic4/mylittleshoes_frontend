@@ -14,6 +14,10 @@ async function handleSignin() {
     data: signinData,
     success: function (response) {
       alert(response["message"]);
+      location.href = "upload.html";
+    },
+    error: function (error) {
+      alert(error.responseText);
     },
   });
 }
