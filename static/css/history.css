@@ -161,7 +161,7 @@ body {
 }
 
 .card-box {
-  width: 40%;
+  width: 35%;
   height: 100%;
   margin: 40px 20px 20px 20px;
   /* margin: 20px; */
@@ -172,6 +172,11 @@ body {
 .card {
   border-radius: 10px;
 }
+
+/* .card-img {
+  width: 150px;
+  height: 150px;
+} */
 
 .card-name {
   /* display: flex;
@@ -188,8 +193,20 @@ body {
   font-size: 10pt;
 }
 
+.like-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+  width: 20px;
+  font-size: 15pt;
+}
+
 .likes {
   font-size: 15pt;
+  margin-bottom: 10px;
+  
 }
 
 
