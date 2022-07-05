@@ -113,7 +113,7 @@
 
 .main_body {
   width: 935px;
-  height: 1000px;
+  height: auto;
 
   margin: 120px auto;
 
@@ -122,14 +122,12 @@
   box-shadow: 1px 1px 5px gray;
 }
 
-
 /* 부트스트랩 카드 바디 */
 
 body {
   min-height: 100vh;
   background: #fafafa;
 }
-
 
 .social-link {
   width: 30px;
@@ -164,6 +162,9 @@ body {
   width: 35%;
   height: 100%;
   margin: 40px 20px 20px 20px;
+
+  border: 1px solid gray;
+  box-shadow: 1px 1px 3px gray;
   /* margin: 20px; */
   /* margin-bottom: 50px; */
   /* height: 100px; */
@@ -198,7 +199,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  
+
   width: 20px;
   font-size: 15pt;
 }
@@ -206,9 +207,17 @@ body {
 .likes {
   font-size: 15pt;
   margin-bottom: 10px;
-  
 }
 
+.history_row {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+  justify-content: space-around;
+}
 
 /*모달*/
 .modal_overlay {
@@ -224,7 +233,7 @@ body {
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
-/* rgba: rgb+a a는 투명도
+  /* rgba: rgb+a a는 투명도
  blur: 흐릿효과*/
   z-index: 9999;
 }
@@ -242,7 +251,7 @@ body {
   margin-top: 70px;
 }
 
-.modal_title{
+.modal_title {
   display: flex;
   flex-direction: row; /*가로로정렬*/
   justify-content: space-between; /* div 사이 공간 균등하게 */
@@ -250,12 +259,12 @@ body {
   font-size: 40px;
 }
 
-.modal_title_side{
+.modal_title_side {
   flex: 0 0 40px;
   text-align: center;
 }
 
-.modal_body{
+.modal_body {
   /*background-color: orange;*/
   /*width: 50%;*/
   height: auto;
@@ -278,7 +287,7 @@ body {
   margin-top: 20px;
 }
 
-.modal_comment{
+.modal_comment {
   /* background-color: deepskyblue; */
   width: 40%;
   height: 85%;

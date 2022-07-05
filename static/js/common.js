@@ -6,6 +6,9 @@ async function logout() {
     data: {},
     success: function (response) {
       alert(response.message);
+      localStorage.removeItem("user");
+      localStorage.removeItem("email");
+      localStorage.removeItem("fullname");
       location.href = "log_in.html";
     },
     error: function (error) {
@@ -30,4 +33,11 @@ async function user_info() {
   });
 }
 
-$(document).ready(function () {});
+$(document).ready(function () {
+  if (localStorage.getItem("user", "")) {
+    $("#user_name").text(localStorage.getItem("fullname"));
+    $("#user_email").text(localStorage.getItem("email"));
+  } else {
+    location.href = "log_in.html";
+  }
+});

@@ -36,101 +36,79 @@
     <script defer src="../static/js/recommend.js"></script>
     <!-- 참조할 css, js -->
 
-  <!-- css, js -->
-  <link rel="stylesheet" href="../static/css/common.css" />
-  <link rel="stylesheet" href="../static/css/recommend.css" />
-  <script defer src="../static/js/common.js"></script>
-  <script defer src="../static/js/recommend.js"></script>
-  <!-- 참조할 css, js -->
+    <!-- css, js -->
+    <link rel="stylesheet" href="../static/css/common.css" />
+    <link rel="stylesheet" href="../static/css/recommend.css" />
+    <script defer src="../static/js/common.js"></script>
+    <script defer src="../static/js/recommend.js"></script>
+    <!-- 참조할 css, js -->
 
-  <!-- 페이지별 타이틀 -->
-  <title>MyLittleShoes_recommend</title>
-</head>
-<!-- 해더 -->
-<div class="header">
-  <!--    로고-->
-  <div class="header_body">
-    <a href="/static"><img class="logo" src="../static/image/logo.png" /></a>
-    <!--        타이틀-->
-    <div class="container">
-      <div class="neon">M L S</div>
-    </div>
-    <!--        유저정보-->
-    <div class="user_info">
-      <span style="font-weight: bold" id="user_name">김동우</span>
-      <br />
-      <span id="user_email">kimphysicsman</span> <br />
-      <button id="logout_btn" onclick="location.href='/logout'">
-        로그아웃
-      </button>
-      <button id="logout_btn" onclick="location.href='/update'">
-        회원 수정
-      </button>
-      <button id="logout_btn" onclick="location.href='/delete'">
-        회원 탈퇴
-      </button>
-    </div>
-  </div>
-</div>
-
-<body class="team_color">
-  <!-- 메뉴바 -->
-  <div class="menu_bar">
-    <!-- 상단바 메뉴 -->
-    <div class="brand_menu_bar">
-      <ul class="brandmenu">
-        <li class="left"><a href="">나이키</a></li>
-        <li class="middle"><a href="">아디다스</a></li>
-        <li class="right"><a href="">퓨마</a></li>
-      </ul>
-    </div>
-    <div class="type_menu_bar">
-      <ul class="typemenu">
-        <li><a class="home" href="#">home</a></li>
-        <li><a href="#">color</a>
-          <ul class="colormenu">
-            <li><a href="#">red</a></li>
-            <li><a href="#">orange</a></li>
-            <li><a href="#">yellow</a></li>
-            <li><a href="#">green</a></li>
-            <li><a href="#">blue</a></li>
-            <li><a href="#">indigo</a></li>
-            <li><a href="#">purple</a></li>
-            <li><a href="#">white</a></li>
-            <li><a href="#">black</a></li>
-            <li><a href="#">other</a></li>
-          </ul>
-        </li>
-        <li><a href="#">height</a>
-          <ul class="heightmenu">
-            <li><a href="#">low</a></li>
-            <li><a href="#">middle</a></li>
-            <li><a href="#">high</a></li>
-          </ul>
-        </li>
-      </ul>
+    <!-- 페이지별 타이틀 -->
+    <title>MyLittleShoes_recommend</title>
+  </head>
+  <!-- 해더 -->
+  <div class="header">
+    <!--    로고-->
+    <div class="header_body">
+      <a href="/static"><img class="logo" src="../static/image/logo.png" /></a>
+      <!--        타이틀-->
+      <div class="container">
+        <div class="neon">M L S</div>
+      </div>
+      <!--        유저정보-->
+      <div class="user_info">
+        <span style="font-weight: bold" id="user_name"></span>
+        <br />
+        <span id="user_email"></span> <br />
+        <button id="logout_btn" onclick="logout()">로그아웃</button>
+      </div>
     </div>
   </div>
 
-
-  <div class="main_body">
-
-    <!-- 상품리스트 -->
-    <div class="productinfo">
-      <aside class="blank">
-        <p></p>
-      </aside>
-      <section>
-        <article id="result-box">
-        </article>
-      </section>
-
-
+  <body class="team_color">
+    <!-- 메뉴바 -->
+    <div class="menu_bar">
+      <!-- 상단바 메뉴 -->
+      <div class="brand_menu_bar">
+        <ul class="brandmenu">
+          <li class="left" onclick="show_by_brand('나이키')">나이키</li>
+          <li class="middle" onclick="show_by_brand('아디다스')">아디다스</li>
+          <li class="right" onclick="show_by_brand('퓨마')">퓨마</li>
+        </ul>
+      </div>
+      <div class="type_menu_bar">
+        <ul class="typemenu">
+          <li><a class="home" onclick="showShoes()">home</a></li>
+          <li>
+            <a class="home" href="#"> color </a>
+            <ul class="colormenu">
+              <li><a onclick="show_by_color('red')">red</a></li>
+              <li><a onclick="show_by_color('orange')">orange</a></li>
+              <li><a onclick="show_by_color('yellow')">yellow</a></li>
+              <li><a onclick="show_by_color('green')">green</a></li>
+              <li><a onclick="show_by_color('blue')">blue</a></li>
+              <li><a onclick="show_by_color('indigo')">indigo</a></li>
+              <li><a onclick="show_by_color('purple')">purple</a></li>
+              <li><a onclick="show_by_color('white')">white</a></li>
+              <li><a onclick="show_by_color('black')">black</a></li>
+              <li><a onclick="show_by_color('other')">other</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="home" href="#">height</a>
+            <ul class="heightmenu">
+              <li><a onclick="show_by_height('low')">low</a></li>
+              <li><a onclick="show_by_height('middle')">middle</a></li>
+              <li><a onclick="show_by_height('high')">high</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="main_body">
       <!-- 상품리스트 -->
-      <div class="productinfo"></div>
+      <div id="result-box"></div>
     </div>
   </body>
 </html>

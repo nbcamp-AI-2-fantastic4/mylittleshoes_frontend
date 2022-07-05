@@ -14,6 +14,9 @@ async function handleSignin() {
     data: signinData,
     success: function (response) {
       alert(response["message"]);
+      localStorage.setItem("user", response["id"]);
+      localStorage.setItem("fullname", response["fullname"]);
+      localStorage.setItem("email", response["email"]);
       location.href = "upload.html";
     },
     error: function (error) {

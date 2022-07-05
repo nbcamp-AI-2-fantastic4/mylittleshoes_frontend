@@ -2,16 +2,16 @@
 .typemenu {
   list-style-type: none;
   padding: 0px;
-  margin-top: -50px;
-  width: 280px;
+  margin-top: -60px;
+  width: 170px;
   background: greenyellow;
   height: 100%;
   overflow: auto;
   position: fixed;
+  text-align: center;
 }
 
-
-.typemenu>li a {
+.typemenu > li a {
   text-decoration: none;
   padding: 10px;
   display: block;
@@ -19,31 +19,14 @@
   font-weight: bold;
 }
 
-.typemenu>li a:hover {
+.typemenu > li a:hover {
   background: #333;
   color: #fff;
 }
-
-
-
-/* .typemenu>li a:hover {
-
-} */
-
-/* .typemenu>li a.home {
-  background: #333;
-  color: #fff;
-} */
-
-/* .typemenu>ul>li:hover>ul {
-  display: block;
-} */
 
 .productinfo {
   margin-left: 120px;
 }
-
-
 
 /* 브랜드별 메뉴 */
 .brandmenu {
@@ -52,26 +35,36 @@
   position: relative;
   padding: 0;
   display: flex;
-  margin-top: 100px;
-  margin-left: 280px;
+  margin-top: 110px;
+  margin-left: 170px;
   align-content: center;
 }
 
-.brandmenu>li>a {
+.brandmenu > li {
   color: black;
   font-weight: bold;
   font-size: 20px;
   text-decoration: none;
   display: block;
+
+  cursor: pointer;
 }
 
-.brandmenu>li {
+.brandmenu > li {
   background-color: greenyellow;
   list-style-type: none;
   text-align: center;
   line-height: 50px;
-  border: 1px solid black;
   width: calc(100% / 3);
+}
+
+.colormenu li {
+  cursor: pointer;
+}
+
+.home {
+  cursor: pointer;
+  font-size: 20px;
 }
 
 li:nth-child(1),
@@ -79,135 +72,62 @@ li:nth-child(2) {
   border-right: none;
 }
 
-
-
-
-
-
-
-article {
-  float: left;
-}
-
-body {
-  -ms-overflow-style: none;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
-
-.blank {
+#result-box {
   width: 100%;
-  height: 150px;
+  height: auto;
 }
 
-/*컨테이너 레이아웃*/
-#container {
-  box-shadow: 0 15px 30px 1px grey;
-  background: rgba(255, 255, 255, 0.9);
-  text-align: center;
-  border-radius: 5px;
-  overflow: hidden;
-  margin: 50px 5px 25px 30px;
-  height: 350px;
-  width: 650px;
-  position: relative;
-  float: left;
+.main_body {
+  margin-top: 20px;
+  margin-left: 190px;
 }
 
-.product-details {
-  position: relative;
-  overflow: hidden;
-  padding: 10px 0 5px 30px;
-  height: 310px;
-  float: left;
+.recommend_box {
+  width: 90%;
+  height: 250px;
+
+  margin: 20px auto;
+
+  border: 1px solid gray;
+  box-shadow: 1px 1px 3px gray;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.recommend_img_box {
   width: 40%;
-}
-
-#container .product-details h1 {
-  /*font-family: 'Bebas Neue', cursive;*/
-  display: inline-block;
-  position: relative;
-  font-size: 30px;
-  color: #344055;
-  margin: 0;
-  font-family: "Stylish", sans-serif;
-}
-
-#container .product-details h1:before {
-  position: absolute;
-  content: "";
-  right: 0%;
-  top: 0%;
-  transform: translate(25px, -15px);
-  font-family: "Bree Serif", serif;
-  display: inline-block;
-  background: #ffe6e6;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 5px;
-  color: white;
-  margin: 0;
-  animation: chan-sh 6s ease infinite;
-}
-
-#container .product-details > p {
-  font-family: "EB Garamond", serif;
-  text-align: center;
-  font-size: 18px;
-  color: #7d7d7d;
-}
-
-.btn span {
-  font-family: "Farsan", cursive;
-  transition: transform 0.3s;
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1.2em;
-  margin: 0;
-}
-
-.product-image {
-  transition: all 0.3s ease-out;
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
   height: 100%;
+}
+
+.recommend_img_box img {
+  height: 70%;
+
+  margin-top: 30px;
+
   float: right;
-  width: 50%;
-  display: inline-block;
+  object-fit: cover;
 }
 
-#container img {
-  width: 100%;
+.recommend_info_box {
+  width: 40%;
   height: 100%;
 }
 
-.info {
-  background: rgba(27, 26, 26, 0.9);
-  font-family: "Bree Serif", serif;
-  transition: all 0.3s ease-out;
-  transform: translateX(-100%);
-  position: absolute;
-  line-height: 1.8;
-  text-align: left;
-  font-size: 105%;
-  cursor: no-drop;
-  color: #fff;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-}
-
-.info h2 {
+.recommend_info_box h2 {
   text-align: center;
+  margin-top: 20px;
 }
 
-/* .product-image:hover .info {
-  transform: translateX(0);
+.recommend_info_list {
+  font-size: 35px;
 }
-.product-image:hover img {
-  transition: all 0.3s ease-out;
-} */
+
+.recommend_info_list li {
+  margin-top: 10px;
+}
+
+.recommend_info_list li span {
+  font-weight: 600;
+}

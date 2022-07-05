@@ -38,6 +38,7 @@
     <link rel="stylesheet" href="../static/css/common.css" />
     <link rel="stylesheet" href="../static/css/history.css" />
     <script defer src="../static/js/history.js"></script>
+    <script defer src="../static/js/common.js"></script>
 
     <!-- 참조할 css, js -->
 
@@ -55,9 +56,9 @@
       </div>
       <!--        유저정보-->
       <div class="user_info">
-        <span style="font-weight: bold" id="user_name">김동우</span>
+        <span style="font-weight: bold" id="user_name"></span>
         <br />
-        <span id="user_email">kimphysicsman</span> <br />
+        <span id="user_email"></span> <br />
         <button id="logout_btn" onclick="logout()">로그아웃</button>
       </div>
     </div>
@@ -67,16 +68,13 @@
     <div class="main_body">
       <!-- history body -->
       <div class="container py-5">
+
         <!-- Card header-->
         <header class="text-center mb-5">
           <h1 class="display-4 font-weight-bold">Custom Shoes History</h1>
-          <!--<p class="font-italic text-muted">Snippet By <a href="https://bootstrapious.com" class="text-muted">
-              <u>Bootstrapious</u></a>
-          </p>-->
         </header>
 
         <!-- cards-->
-
         <div class="cards row pb-5 mb-2">
           <div id="history"></div>
         </div>
@@ -108,7 +106,7 @@
             </div>
             <div class="comment_write">
                 <input type="text" class="form-control" id="comment_text" name="comment_text">
-                <button type="button" class="comment_btn" onclick="saveComment()">작성</button>
+                <button type="button" value="" id="comment_btn" class="comment_btn" onclick="saveComment()">작성</button>
             </div>  
           </div>
       </div>
