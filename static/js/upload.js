@@ -1,5 +1,5 @@
-backend_url = "http://127.0.0.1:8000/"
-frontend_url = "http://127.0.0.1:5500/"
+const backend_url = "http://127.0.0.1:8000/"
+const frontend_url = "http://127.0.0.1:5500/"
 
 async function imageUpload() {
     const formData = new FormData();
@@ -11,7 +11,7 @@ async function imageUpload() {
 
     const response = await fetch(`${backend_url}/upload`, {
         method: "POST",
-        body: formData(imageData)
+        body: formData(imageData),
     })
 
     if (response.status == 200) {
