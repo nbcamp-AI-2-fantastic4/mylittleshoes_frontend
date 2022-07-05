@@ -3,26 +3,30 @@ const modal = document.getElementById('modal_open');
 
 
 // 모달 창 열기 // onclick 으로 openModal() 함수 실행하며 받은 인자들 ( django views에서 받은 값들이 들어있다.)
-function openModal() {
-
+function openModal(id) {
+    
     // class명으로 쓰는 이유는 여러개의 모달이 존재해서 하나의 id로 열 수 없기 때문
     $(".modal_overlay").fadeIn();
     // 모달의 display 속성 변경해주기
     modal.style.display = 'flex';
     // 모달 열리면서 스크롤 막기
     document.body.style.overflowY = 'hidden';
-
+    
     //팝업창을 가운데로 띄우기 위해 현재 화면의 가운데 값과 스크롤 값을 계산하여 팝업창 CSS 설정
     $(".modal_overlay").css({
         "top": (($(window).height()-$(".modal_overlay").outerHeight())/2+$(window).scrollTop())+"px",
         "left": (($(window).width(2000)-$(".modal_overlay").outerWidth())/2+$(window).scrollLeft())+"px"
      });
+
+     const history_id = id + 1;
+     showComment(history_id)
 }
 
 $(function(){
     // 모달 창 닫기(닫기버튼)
     $("button[id='close_modal']").click(function(){
         $("div[id = 'modal_open']").fadeOut();
+        
         document.body.style.overflowY = 'scroll';
     });
     // 모달 창 닫기(영역밖 클릭)
@@ -36,79 +40,142 @@ $(function(){
 
 
 
-// const backend_base_url = "http://127.0.0.1:8000"
-// const frontend_base_url = "http://127.0.0.1:5500"
+const backend_base_url = "http://127.0.0.1:8000"
+const frontend_base_url = "http://127.0.0.1:5500"
 
+// history 조회
 $(document).ready(function () {
-  ShowHistory();
+  showHistory();
 });
 
-
-async function ShowHistory() {
-    const response = await fetch(`${backend_base_url}/history/`, {
-        // headers:{
-        //     Accept:"application/json",
-        //     'Content-type':'application/json'
-        // },
-        method: 'GET',
-    })
-    response_json = await response.json()
-    console.log(response_json)
-    return response_json
-
-    // if (response.status ==200){
-    //     window.location.replace(`${frontend_base_url}/hitory.html`);
-    // }else{
-    //     alert(response.status)
-    // }
+async function showHistory() {
+  $.ajax({
+    type: "GET",
+    url: `${backend_base_url}/history/`,
+    data: {},
+    success: function (response) {
+        let history_info = response["result_history"]
+        for (let i=0; i<history_info.length; i++){
+            let img_result = history_info[i]["image"]["image_result"];
+            let username = history_info[i]["user"];
+            let created_at = history_info[i]["created_at"];
+            let like = history_info[i]["like"];
+            
+            let temp_html = `
+                            <div class="card-box col-lg-3 col-md-6 mb-4 mb-lg-0">
+                                <div class="card shadow-sm border-0 rounded">
+                                <div class="card-body p-0">
+                                    <div class="card-img" onclick="openModal(id=${i})">
+                                    <img src="${backend_base_url}..${img_result}" alt="" class="w-100 card-img-top" style="width:350px; height:350px;">
+                                    </div>
+                                    <div class="p-4">
+                                    <p class="card-name mb-0">
+                                        ${username}
+                                        <li class="like-box list-inline-item m-0">
+                                            <a href="#" class="social-link" style="margin-right:15px; border:none;">
+                                                <i class="likes fa-solid fa-heart"></i>
+                                            </a>${like}
+                                        </li>
+                                    </p>
+                                    <p class="card-date small text-muted">${created_at}</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            `;
+            $("#history").append(temp_html);
+        }
+    },
+  });
 }
 
 
+// history 저장
+// 이미지 아이디 받을방법이나 백엔드에서 .last로 받을수있나
+async function saveHistory() {
+    
+    let form_data = new FormData()
 
-// function ShowHistory() {
-//   $.ajax({
-//     type: "GET",
-//     url: "http://127.0.0.1:8000/history/",
-//     data: {},
-//     success: function (response) {
-        // console.log(response["result_history"])
-        // let history_info = response["result_history"]
-        // console.log(history_info)
-        // for (let i=0; i<history_info.length; i++){
-        //     let username = history_info[i]["user"];
-        //     console.log(username)
-        // }
+    form_data.append("exposure_start", "2022-06-30")
+    form_data.append("exposure_end", "2023-06-30")
+
+    $.ajax({
+        type: "POST",
+        url: `${backend_base_url}/history/`,
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            alert(response["result"])
+        }
+    });
+  }
 
 
-    //   let all_list = response["all_result"];
-    //   for (let i = 0; i < all_list.length; i++) {
-    //     let user_img = all_list[i]["user_img"];
-    //     let hero_img = all_list[i]["hero_img"];
-    //     let hero = all_list[i]["hero"];
-    //     let description = all_list[i]["description"].slice(0, 90) + "...";
-    //     let accuracy = all_list[i]["accuracy"];
-    //     let temp_html = `<div id="container">                         
-    //                         <div class="product-details">                            
-    //                             <h1>My Little Hero</h1>                            
-    //                             <img src="http://127.0.0.1:5000/${user_img}" name="${i}"
-    //                                     class="information" id="user_img">                          
-    //                         </div>
-    //                         <!--마블 이미지 넣는 곳-->
-    //                         <div class="product-image" id="marble_img">
-    //                             <img src="http://127.0.0.1:5000/${hero_img}"
-    //                                     alt="">
-    //                             <div class="info" id="marble_info">
-    //                                 <h2> Description</h2>
-    //                                 <ul>
-    //                                     <li><strong >Name : </strong >  ${hero}</li>
-    //                                     <li style="padding-right: 10px;"><strong>Description  </strong><br>${description}</li>
-    //                                     <li><strong >Accuracy : </strong >${accuracy}</li>
-    //                                 </ul>
-    //                             </div>
-    //                         </div>
-    //                     </div>`;
-    //     $("#result-box").append(temp_html);
-    //   }
-//     },
-//   });
-// }
+// comment 조회
+async function showComment(history_id) {
+    $.ajax({
+        type: "GET",
+        url: `${backend_base_url}/history/comment/${history_id}`,
+        data: {},
+        success: function (response) {
+            let comment_info = response["result_comment"]
+            console.log(comment_info)
+            for (let i=0; i<1; i++){
+                let image_one = comment_info[i]["image"]["image_one"];
+                let image_two = comment_info[i]["image"]["image_two"];
+                let image_result = comment_info[i]["image"]["image_result"];
+
+                let temp_html_img = `
+                                <div class="modal_body" >
+                                    <div class="img_used">
+                                        <div class="img_first">
+                                        <img src="${backend_base_url}..${image_one}" style="width:250px; height:200px;"/>
+                                        </div>
+                                        <div class="img_second">
+                                        <img src="${backend_base_url}..${image_two}" style="width:250px; height:200px;"/>
+                                        </div>
+                                    </div>  
+                                    <div class="img_result">
+                                        <img src="${backend_base_url}..${image_result}" style="width:300px; height:200px;"/>
+                                    </div>
+                                </div>`;
+                $("#comment_img").append(temp_html_img);
+            }
+            for (let i=0; i<comment_info.length; i++){
+                
+                let username = comment_info[i]["user"];
+                let content = comment_info[i]["content"];
+                
+                let temp_html = `
+                                ${username} : ${content}
+                                <hr>
+                                `;
+                $("#comment").append(temp_html);
+            }
+        },
+    });
+}
+
+
+// comment 저장
+async function saveComment() {
+    content = document.getElementById("comment_text").value;
+    let form_data = new FormData()
+
+    form_data.append("content", content)
+
+    $.ajax({
+        type: "POST",
+        url: `${backend_base_url}/history/comment/`,
+        data: form_data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            alert(response["result"])
+        }
+    });
+  }
+  
