@@ -124,6 +124,10 @@
 
 /* 부트스트랩 카드 바디 */
 
+.text-center {
+  margin-top: 50px;
+}
+
 body {
   min-height: 100vh;
   background: #fafafa;

@@ -65,6 +65,14 @@
 
   <body class="team_color">
     <div class="main_body">
+      <div class="button_row">
+        <div class="button_box">
+          <button onclick="location.href='recommend.html'">추천 신발 보러가기</button>
+        </div>
+        <div class="button_box">
+          <button onclick="location.href='history.html'">히스토리 보러가기</button>
+        </div>
+      </div>
       <div class="upload_box" id="upload_box">
         <div class="upload_text_box">
           <h>나의 신발은?</h>
@@ -88,7 +96,7 @@
         </div>
         <div class="button_box">
           <div class="refresh_button">
-            <button onclick="removeImgButton()">새로고침</button>
+            <button onclick="location.reload();">새로고침</button>
           </div>
           <div class="result_view_button">
             <button onclick="imageUpload()">결과보기</button>
@@ -105,7 +113,7 @@
         </div>
         <div class="button_box">
           <div class="restart_button">
-            <button onclick="replay()">다시하기</button>
+            <button onclick="location.reload();">다시하기</button>
           </div>
           <div class="save_button">
             <button onclick="image_save()">저장하기</button>

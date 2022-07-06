@@ -22,7 +22,6 @@ async function imageUpload() {
       document
         .getElementById("result-file")
         .setAttribute("src", backend_url + "/out.png");
-      document.getElementById("result_box").style.display = "block";
     },
     error: function (error) {
       alert(error.responseText);
@@ -31,15 +30,13 @@ async function imageUpload() {
 }
 
 function replay() {
-  document.getElementById("result_box").style.display = "none";
-
   document.getElementById("first-img").setAttribute("src", "");
-  document.getElementById("first-img").style.display = "none";
+  // document.getElementById("first-img").style.display = "none";
   document.getElementById("first-p").style.display = "block";
   document.getElementById("first-button").style.display = "block";
 
   document.getElementById("second-img").setAttribute("src", "");
-  document.getElementById("second-img").style.display = "none";
+  // document.getElementById("second-img").style.display = "none";
   document.getElementById("second-p").style.display = "block";
   document.getElementById("second-button").style.display = "block";
 }
@@ -60,7 +57,7 @@ async function image_save() {
     success: function (response) {
       alert(response["message"]);
       console.log(response["message"]);
-      replay();
+      location.reload();
     },
     error: function (error) {
       alert(error.responseText);

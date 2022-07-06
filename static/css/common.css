@@ -121,3 +121,27 @@
   border: 1px solid #e8e8e8;
   box-shadow: 1px 1px 5px gray;
 }
+
+.button_row {
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button_box {
+  width: 40%;
+  height: 100%;
+}
+
+.button_box button {
+  font-size: 20px;
+  padding: 10px;
+  margin: 40px auto;
+
+  display: block;
+
+  border-radius: 5px;
+}
