@@ -29,26 +29,12 @@ async function imageUpload() {
   });
 }
 
-function replay() {
-  document.getElementById("first-img").setAttribute("src", "");
-  // document.getElementById("first-img").style.display = "none";
-  document.getElementById("first-p").style.display = "block";
-  document.getElementById("first-button").style.display = "block";
-
-  document.getElementById("second-img").setAttribute("src", "");
-  // document.getElementById("second-img").style.display = "none";
-  document.getElementById("second-p").style.display = "block";
-  document.getElementById("second-button").style.display = "block";
-}
-
 // 결과 저장
 async function image_save() {
   user = localStorage.getItem("user");
   const data = {
     user: user,
   };
-
-  console.log(data);
 
   $.ajax({
     type: "POST",

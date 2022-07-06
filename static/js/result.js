@@ -21,18 +21,6 @@ async function imageResult() {
 }
 
 // 사용된 이미지 열고 닫기(버튼)
-// function openCloseImg() {
-//     console.log("연결 확인")
-//     if (document.getElementById("img_box").style.display == "flex") {
-//         document.getElementById("img_box").style.display = "none";
-//         document.getElementById("show_hide_button").textContent = "사용된 이미지 보기";
-//     } else {
-//         document.getElementById("img_box").style.display = "flex";
-//         document.getElementById("show_hide_button").textContent = "사용된 이미지 숨기기";
-//     }
-// }
-
-// 사용된 이미지 열고 닫기(버튼)
 $(function () {
   $(document).ready(function () {
     $(".show_hide_button").click(function () {

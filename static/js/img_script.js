@@ -91,7 +91,6 @@ function bShowFile() {
 }
 
 function removeImgButton(afile, bfile) {
-  console.log("확인용");
   var a_p = document.getElementById("first-p");
   var a_button = document.getElementById("first-button");
   var a_img = document.getElementById("first-img");

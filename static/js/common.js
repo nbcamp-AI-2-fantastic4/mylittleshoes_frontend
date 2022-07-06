@@ -33,6 +33,7 @@ async function user_info() {
   });
 }
 
+// 페이지별 새로고침 시 실행
 $(document).ready(function () {
   if (localStorage.getItem("user", "")) {
     $("#user_name").text(localStorage.getItem("fullname"));

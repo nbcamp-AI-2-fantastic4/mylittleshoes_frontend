@@ -1,4 +1,4 @@
-// 로그인 버튼 클릭시 함수 실행
+// 로그인
 async function handleSignin() {
   email = document.getElementById("floatingInput").value;
   password = document.getElementById("floatingPassword").value;
@@ -25,6 +25,7 @@ async function handleSignin() {
   });
 }
 
+// 회원가입
 async function handleSignup() {
   username = document.getElementById("floatingInputNM").value;
   fullname = document.getElementById("floatingInputFM").value;

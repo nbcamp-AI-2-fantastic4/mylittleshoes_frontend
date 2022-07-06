@@ -44,11 +44,11 @@ $(function () {
 const backend_base_url = "http://127.0.0.1:8000";
 const frontend_base_url = "http://127.0.0.1:5500";
 
-// history 조회
 $(document).ready(function () {
   showHistory();
 });
 
+// history 조회
 async function showHistory() {
   $.ajax({
     type: "GET",
@@ -97,27 +97,6 @@ async function showHistory() {
           temp_html_2 = "";
         }
       }
-    },
-  });
-}
-
-// history 저장
-// 이미지 아이디 받을방법이나 백엔드에서 .last로 받을수있나
-async function saveHistory(image_id) {
-  let form_data = new FormData();
-
-  form_data.append("exposure_start", "2022-06-30");
-  form_data.append("exposure_end", "2023-06-30");
-
-  $.ajax({
-    type: "POST",
-    url: `${backend_base_url}/history/`,
-    data: form_data,
-    cache: false,
-    contentType: false,
-    processData: false,
-    success: function (response) {
-      alert(response["result"]);
     },
   });
 }
