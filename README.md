@@ -14,10 +14,10 @@
 
 > |                    Name                    |  Position   |
 > | :----------------------------------------: | :---------: |
-> | [김동우](https://github.com/kimphysicsman) |    Back     |
-> |   [김진수](https://github.com/creamone)    |    Back     |
-> |     [박진우](https://github.com/J1NU2)     |    Back     |
-> |    [최민기](https://github.com/mankic)     |    Back     |
+> | [김동우](https://github.com/kimphysicsman) |    Front     |
+> |   [김진수](https://github.com/creamone)    |    Front     |
+> |     [박진우](https://github.com/J1NU2)     |    Front     |
+> |    [최민기](https://github.com/mankic)     |    Front     |
 
 ### 3. 역할 분담
 
@@ -30,15 +30,11 @@
 
 # 📚 기술 스택
 
-### 1. Back-end
+### Front-end
 
-> python3  
-> Django  
-> Django-rest-framwork
-
-### 2. Front-end
-
-> Node.js
+> HTML
+> CSS
+> Javascript
 
 <br />
 
