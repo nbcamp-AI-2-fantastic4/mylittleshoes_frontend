@@ -32,8 +32,8 @@
 
 ### Front-end
 
-> HTML
-> CSS
+> HTML  
+> CSS  
 > Javascript
 
 <br />
